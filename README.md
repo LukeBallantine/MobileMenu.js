@@ -9,16 +9,18 @@ These are the steps to get it working:
 1) Make sure your navigation menu is in the format:
 
 ```html
-<ul>
-	<li><a href="/">Home</a></li>
-	<li><a href="/services/">Services</a>
+<nav>
 	<ul>
-		<li><a href="/services/web-development/">Web Development</a></li>
-		<li><a href="/services/online-marketing/">Online Marketing</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/services/">Services</a>
+		<ul>
+			<li><a href="/services/web-development/">Web Development</a></li>
+			<li><a href="/services/online-marketing/">Online Marketing</a></li>
+		</ul>
+		</li>
+		<li><a href="/contact-us/">Contact Us</a></li>
 	</ul>
-	</li>
-	<li><a href="/contact-us/">Contact Us</a></li>
-</ul>
+</nav>
 ```
 
 2) Add the following scripts to your website:
@@ -33,7 +35,9 @@ These are the steps to get it working:
 ```html
 <script>
 jQuery(document).ready(function($) {
-  $("ddlMobileNav").mobileMenu({ ulsource : "#main-nav > ul", maxlevel : 4 });
+	// build select menu (for mobile) from main nav
+    	$("nav > ul").after("<select id='ddlMobileNav'></select>");
+    	$("#ddlMobileNav").mobileMenu({ ulsource: "nav > ul", maxlevel: 2 });
 });
 </script>
 ```
