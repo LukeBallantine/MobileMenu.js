@@ -24,7 +24,7 @@ These are the steps to get it working:
 2) Add the following scripts to your website:
 
 ```html
-<script src="/js/jquery-1.6.js"></script>
+<script src="/js/jquery.js"></script>
 <script src="/js/jquery-mobilemenu.js"></script>
 ```
 
@@ -38,12 +38,14 @@ jQuery(document).ready(function($) {
 </script>
 ```
 The parameters you can specify for the mobileMenu function are:
-ulsource
---------
-The jquery selector referencing your unordered list.
+ulsource: The jquery selector referencing your unordered list.
+maxlevel: The maximum number of levels of the main navigation you wish to traverse.
 
-maxlevel
---------
-The maximum number of levels of the main navigation you wish to traverse.
 
+You should now have a dropdown menu that will navigate the user to the selected page. 
+
+
+Media Queries
+-------------
+And finally, don’t forget to use media queries to hide the main navigation when the screen size is below a certain width, and likewise to hide the select menu when the screen width is larger than mobile.
 
